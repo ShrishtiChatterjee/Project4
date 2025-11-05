@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            background-color: rgb(0, 0, 0);
+            color:rgb(255, 255, 255);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+.cover{
+      background-color: rgb(96, 170, 98);
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgShift 6s infinite alternate;
+    z-index: 10;
+}
+.cover img{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    opacity: 100;
+}
+        @font-face {
+            font-family: "Lantern";
+            src: url(LanterFlies&MapleVF.ttf) format("truetype");
+
+        }
+
+         @font-face {
+            font-family: "Tear";
+            src: url(CryMeARiverVF.ttf) format("truetype");
+
+        }
+
+         @font-face {
+            font-family: "Internet";
+            src: url(PixelFont_Internet-Regular.otf) format("truetype");
+
+        }
+
+         @font-face {
+            font-family: "FROOT";
+            src: url(TootiFrooti-Regular.otf) format("truetype");
+
+        }
+
+    
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px;
+            width: 100vw;
+            height: 100vh;
+        }
+        .box{
+            background-color: #fbfaf7;
+            border: 1px solid rgb(104, 184, 123);
+            padding: 32px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: black;
+            text-align: center;
+            flex-grow: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .box1 {
+          background-color: #fbfaf7;
+          font-size: 200px;
+          font-family: "Lantern";
+          justify-content:center;
+          height:400px;
+          animation: fontGrow 4s ease-in-out infinite alternate;
+
+
+        }
+
+        .box2 {
+          display: flex;
+          background-color: #fbfaf7;
+          font-size: 110px;
+          font-family: "Tear";
+          justify-content:center;
+          text-align: center;
+          height:400px;
+          animation: fontTear 4s ease-in-out infinite alternate;
+
+
+        }
+
+         .box3 {
+          background-color: #fbfaf7;
+          font-size: 100px;
+          font-family: "Internet";
+          justify-content:center;
+          height:400px;
+
+
+        }
+
+         .box4 {
+          background-color: #fbfaf7;
+          font-size: 100px;
+          font-family: "Froot";
+          justify-content:center;
+          height:400px;
+
+
+        }
+
+        @keyframes fontGrow {
+        from {
+            font-variation-settings: "GROW" 0;
+        }
+        to {
+            font-variation-settings: "GROW" 100;
+        }
+    }
+
+     @keyframes fontTear {
+        from {
+            font-variation-settings: "TEAR" 0;
+        }
+        to {
+            font-variation-settings: "TEAR" 100;
+        }
+    }
+
+      /*  @keyframes bgShift {
+            0% {background-color:rgb(244,83,52);}
+            100% { background-color: rgb(202, 216, 121);}
+
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        /* .container {
+            display:flex;
+            flex-wrap: wrap; 
+            justify-content:center;
+            gap: 16px;
+            width: 100vw;
+            height: 100vh;
+        }
+        .box{
+            background-color: cornflowerblue;
+            border: 1px solid rgb(65, 111, 168);
+            padding: 32px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            text-align: center;
+            width: 250px;
+            height: 150px;  
+        } */
+         </style>
+<body>
+    <header>
+        <h1>
+            Found Fonts
+        </h1>
+    </header> 
+    <div class="cover">
+    <img src="coverimage.png">
+     </div>
+
+<div class ="container">
+    <div class ="box box1"> BEAST </div>
+    <div class ="box box2"> CRY ME A RIVER</div>
+    <div class ="box box3"> INTERNET</div>
+    <div class ="box box4"> TOOTI FROOTI</div>
+    <div class ="box">box 5</div>
+    <div class ="box"> box 6</div>
+</div>
+</body>
+</html>
