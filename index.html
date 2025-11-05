@@ -20,17 +20,19 @@
       background-color: rgb(96, 170, 98);
     position: relative;
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: bgShift 6s infinite alternate;
     z-index: 10;
+   overflow: hidden;
 }
 .cover img{
     width: 100%;
     max-width: 800px;
     height: auto;
     opacity: 100;
+    object-fit: cover;
 }
         @font-face {
             font-family: "Lantern";
