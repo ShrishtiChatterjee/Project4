@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Foundry</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            pointer-events: none;
         }
-        header{
+
+        header {
             background-color: rgb(0, 0, 0);
-            color:rgb(255, 255, 255);
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(255, 255, 255);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: center;
         }
+/* <<<<<<< HEAD
 .cover{
       background-color: rgb(96, 170, 98);
     position: relative;
@@ -33,115 +37,396 @@
     height: auto;
     opacity: 100;
     object-fit: cover;
-}
+} */
+=======
+
+        .cover {
+            background-color: rgb(96, 170, 98);
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bgShift 6s infinite alternate;
+            z-index: 10;
+        }
+
+        .cover img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            opacity: 100;
+        }
+
+>>>>>>> 0dda6722eb5ae594e962133237141f9f1f0ef739
         @font-face {
             font-family: "Lantern";
             src: url(LanterFlies&MapleVF.ttf) format("truetype");
 
         }
 
-         @font-face {
+        @font-face {
             font-family: "Tear";
             src: url(CryMeARiverVF.ttf) format("truetype");
 
         }
 
-         @font-face {
+        @font-face {
             font-family: "Internet";
             src: url(PixelFont_Internet-Regular.otf) format("truetype");
 
         }
 
-         @font-face {
+        @font-face {
             font-family: "FROOT";
             src: url(TootiFrooti-Regular.otf) format("truetype");
 
         }
 
-    
+
         .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            gap: 0px;
+            display: flex;
             width: 100vw;
-            height: 100vh;
         }
-        .box{
-            background-color: #fbfaf7;
-            border: 1px solid rgb(104, 184, 123);
-            padding: 32px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: black;
-            text-align: center;
-            flex-grow: 1;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+
         .box1 {
-          background-color: #fbfaf7;
-          font-size: 200px;
-          font-family: "Lantern";
-          justify-content:center;
-          height:400px;
-          animation: fontGrow 4s ease-in-out infinite alternate;
+            display: flex;
+            background-color: #fbfaf7;
+            padding: 10px;
+            border: 1px solid rgb(104, 184, 123);
+            font-size: 200px;
+            font-family: "Lantern";
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            width: 50vw;
+            animation: fontGrow 4s ease-in-out infinite alternate;
+            cursor: pointer;
+            pointer-events: auto;
+        }
 
-
+        .box1:hover {
+            background-color: rgb(96, 170, 98);
+            color: #fbfaf7;
         }
 
         .box2 {
-          display: flex;
-          background-color: #fbfaf7;
-          font-size: 110px;
-          font-family: "Tear";
-          justify-content:center;
-          text-align: center;
-          height:400px;
-          animation: fontTear 4s ease-in-out infinite alternate;
-
-
+            display: flex;
+            background-color: #fbfaf7;
+            border: 1px solid rgb(104, 184, 123);
+            font-size: 110px;
+            font-family: "Tear";
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 50vh;
+            width: 50vw;
+            animation: fontTear 4s ease-in-out infinite alternate;
+            cursor: pointer;
+            pointer-events: auto;
         }
 
-         .box3 {
-          background-color: #fbfaf7;
-          font-size: 100px;
-          font-family: "Internet";
-          justify-content:center;
-          height:400px;
-
-
+        .box2:hover {
+            background-color: rgb(96, 170, 98);
+            color: #fbfaf7;
         }
 
-         .box4 {
-          background-color: #fbfaf7;
-          font-size: 100px;
-          font-family: "Froot";
-          justify-content:center;
-          height:400px;
+        .box3 {
+            display: flex;
+            background-color: #fbfaf7;
 
+            border: 1px solid rgb(104, 184, 123);
+            font-size: 100px;
+            justify-content: center;
+            align-items: center;
+            font-family: "Internet";
+            text-align: center;
+            height: 50vh;
+            width: 50vw;
+            cursor: pointer;
+            pointer-events: auto;
+        }
 
+        .box3:hover {
+            background-color: rgb(96, 170, 98);
+            color: #fbfaf7;
+        }
+
+        .box4 {
+            display: flex;
+            background-color: #fbfaf7;
+
+            border: 1px solid rgb(104, 184, 123);
+            font-size: 90px;
+            font-family: "Froot";
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            width: 50vw;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .box4:hover {
+            background-color: rgb(96, 170, 98);
+            color: #fbfaf7;
+        }
+
+        .popup-menu {
+            position: fixed;
+            width: 350px;
+            background-color: white;
+            border: 2px solid rgb(104, 184, 123);
+            padding: 20px;
+            z-index: 1000;
+            pointer-events: auto;
+            display: none;
+        }
+
+        .popup-menu.active {
+            display: block;
+        }
+
+        .popup-menu .about-typeface {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 20px;
+            font-size:10px;
+        }
+
+        .popup-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: rgb(104, 184, 123);
+            pointer-events: auto;
+        }
+        
+
+        .popup-menu .slider-container {
+            margin: 20px 0;
+        }
+
+        .popup-menu .slider-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(104, 184, 123);
+            font-weight: bold;
+        }
+
+        .popup-menu .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #fbfaf7;
+            outline: none;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+            cursor: pointer;
+            border: 1px solid rgb(104, 184, 123);
+            pointer-events: auto;
+        }
+
+        .popup-menu .slider:hover {
+            opacity: 1;
+        }
+
+        .popup-menu .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgb(104, 184, 123);
+            cursor: pointer;
+        }
+
+        .popup-menu .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgb(104, 184, 123);
+            cursor: pointer;
+            border: none;
+        }
+
+        .popup-menu .slider-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(104, 184, 123)
+        }
+
+        .popup-menu .download-btn {
+            width: 100%;
+            padding: 12px 20px;
+            margin-top: 20px;
+            background-color: rgb(104, 184, 123);
+            color: white;
+            border: 2px solid rgb(104, 184, 123);
+            border-radius: 40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .popup-menu .download-btn:hover {
+            background-color: white;
+            color: rgb(104, 184, 123)
+        }
+
+        .popup-menu .close-btn:hover {
+            color: rgb(104, 184, 123);
         }
 
         @keyframes fontGrow {
-        from {
-            font-variation-settings: "GROW" 0;
-        }
-        to {
-            font-variation-settings: "GROW" 100;
-        }
-    }
+            from {
+                font-variation-settings: "GROW" 0;
+            }
 
-     @keyframes fontTear {
-        from {
-            font-variation-settings: "TEAR" 0;
+            to {
+                font-variation-settings: "GROW" 100;
+            }
         }
-        to {
-            font-variation-settings: "TEAR" 100;
-        }
-    }
 
-      /*  @keyframes bgShift {
+        @keyframes fontTear {
+            from {
+                font-variation-settings: "TEAR" 0;
+            }
+
+            to {
+                font-variation-settings: "TEAR" 100;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .box1 {
+                font-size: 120px;
+            }
+
+            .box2 {
+                font-size: 70px;
+            }
+
+            .box3 {
+                font-size: 70px;
+            }
+
+            .box4 {
+                font-size: 60px;
+            }
+
+            .popup-menu {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .box1, .box2, .box3, .box4 {
+                width: 100vw;
+                height: 25vh;
+            }
+
+            .box1 {
+                font-size: 80px;
+            }
+
+            .box2 {
+                font-size: 50px;
+            }
+
+            .box3 {
+                font-size: 50px;
+            }
+
+            .box4 {
+                font-size: 45px;
+            }
+
+            .popup-menu {
+                width: 90%;
+                max-width: 350px;
+                padding: 15px;
+            }
+
+            .popup-menu .about-typeface {
+                margin: 10px 10px;
+            }
+
+            .popup-menu .about-typeface h1 {
+                font-size: 20px;
+            }
+
+            #demoText {
+                font-size: 18px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box1 {
+                font-size: 50px;
+            }
+
+            .box2 {
+                font-size: 35px;
+            }
+
+            .box3 {
+                font-size: 40px;
+            }
+
+            .box4 {
+                font-size: 35px;
+            }
+
+            .popup-menu {
+                width: 95%;
+                padding: 12px;
+            }
+
+            .popup-menu .about-typeface {
+                font-size: 8px;
+                margin: 8px 8px;
+            }
+
+            .popup-menu .about-typeface h1 {
+                font-size: 16px;
+            }
+
+            .popup-menu .about-typeface p {
+                font-size: 12px !important;
+            }
+
+            #demoText {
+                font-size: 14px !important;
+            }
+
+            .popup-menu .slider-container label {
+                font-size: 14px;
+            }
+
+            .popup-menu .download-btn {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+        }
+
+        /*  @keyframes bgShift {
             0% {background-color:rgb(244,83,52);}
             100% { background-color: rgb(202, 216, 121);}
 
@@ -168,22 +453,100 @@
             width: 250px;
             height: 150px;  
         } */
-         </style>
-<body>
-    <header>
-        <h1>
-            Found Fonts
-        </h1>
-    </header> 
-    <div class="cover">
-    <img src="coverimage.png">
-     </div>
+    </style>
 
-<div class ="container">
-    <div class ="box box1"> BEAST </div>
-    <div class ="box box2"> CRY ME A RIVER</div>
-    <div class ="box box3"> INTERNET</div>
-    <div class ="box box4"> TOOTI FROOTI</div>
-</div>
+<body>
+    <div class="cover">
+        <img src="coverimage.png">
+    </div>
+
+    <div class="container">
+        <div class="box1"> BEAST </div>
+        <div class="box2"> CRY ME A RIVER</div>
+    </div>
+    <div class="container">
+        <div class="box3"> INTERNET</div>
+        <div class="box4"> TOOTI FROOTI</div>
+    </div>
+
+    <!-- Popup Menu -->
+    <div class="popup-menu" id="popupMenu">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="about-typeface">
+            <h1>About Typeface</h1>
+            <p style="font-size:15px;">'Beast is a decorative variable typeface that is inspired by small beasts, namely the spotted lanternfly,
+                as observed in the year 2025 and the seeds of the maple or samara. This is ideal in its use as a display
+                typeface or as a drop cap to mark the beginning of a chapter.</p>
+        </div>
+
+        <div id="demoText" style="font-family: 'Lantern'; font-size: 32px; text-align: center; margin-top: 10px;">
+            ONCE UPON A TIME THERE WAS A LITTLE BEAST
+        </div>
+        <div class="slider-container">
+            <label for="fontSlider">Grow</label>
+            <input type="range" min="0" max="100" value="10" class="slider" id="fontSlider">
+        </div>
+
+        <button class="download-btn" onclick="downloadFont()">Download Font</button>
+    </div>
+
+    <script>
+        const popup = document.getElementById('popupMenu');
+        const boxes = document.querySelectorAll('.box1, .box2, .box3, .box4');
+
+        // Add click event listeners
+        boxes.forEach((box, index) => {
+            box.addEventListener('click', function () {
+                popup.classList.add('active');
+                const popupWidth = popup.offsetWidth;
+                const popupHeight = popup.offsetHeight;
+
+                //inside always
+                const margin = 10;
+                const maxX = window.innerWidth - popupWidth - margin;
+                const maxY = window.innerHeight - popupHeight - margin;
+
+           
+                const randomX = Math.max(margin, Math.floor(Math.random() * Math.max(margin, maxX)));
+                const randomY = Math.max(margin, Math.floor(Math.random() * Math.max(margin, maxY)));
+
+                // Position
+                popup.style.left = randomX + 'px';
+                popup.style.top = randomY + 'px';
+            });
+        });
+
+        // Close popup
+        function closePopup() {
+            popup.classList.remove('active');
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.popup-menu') && !event.target.closest('.box1, .box2, .box3, .box4')) {
+                closePopup();
+            }
+        });
+
+        // Slider functionality
+        const slider = document.getElementById('fontSlider');
+        const demoText = document.getElementById('demoText');
+
+        slider.addEventListener('input', function() {
+            const growValue = this.value;
+            demoText.style.fontVariationSettings = `"GROW" ${growValue}`;
+        });
+
+        // Download font function
+        function downloadFont() {
+            const link = document.createElement('a');
+            link.href = 'LanterFlies&MapleVF.ttf';
+            link.download = 'LanterFlies&MapleVF.ttf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
+
 </html>
