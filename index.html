@@ -19,36 +19,17 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: center;
         }
-/* <<<<<<< HEAD
-.cover{
-      background-color: rgb(96, 170, 98);
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-   overflow: hidden;
-}
-.cover img{
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    opacity: 100;
-    object-fit: cover;
-} */
-=======
 
         .cover {
             background-color: rgb(96, 170, 98);
             position: relative;
             height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: bgShift 6s infinite alternate;
             z-index: 10;
+            overflow: hidden;
         }
 
         .cover img {
@@ -56,10 +37,10 @@
             max-width: 800px;
             height: auto;
             opacity: 100;
+            object-fit: cover;
         }
 
->>>>>>> 0dda6722eb5ae594e962133237141f9f1f0ef739
-        @font-face {
+         @font-face {
             font-family: "Lantern";
             src: url(LanterFlies&MapleVF.ttf) format("truetype");
 
@@ -127,7 +108,7 @@
         }
 
         .box2:hover {
-            background-color: rgb(96, 170, 98);
+            background-color: rgb(104, 184, 123);
             color: #fbfaf7;
         }
 
@@ -148,14 +129,13 @@
         }
 
         .box3:hover {
-            background-color: rgb(96, 170, 98);
+            background-color: rgb(104, 184, 123);
             color: #fbfaf7;
         }
 
         .box4 {
             display: flex;
             background-color: #fbfaf7;
-
             border: 1px solid rgb(104, 184, 123);
             font-size: 90px;
             font-family: "Froot";
@@ -192,7 +172,7 @@
             flex-direction: column;
             gap: 10px;
             margin: 20px 20px;
-            font-size:10px;
+            font-size: 10px;
         }
 
         .popup-menu .close-btn {
@@ -206,7 +186,7 @@
             color: rgb(104, 184, 123);
             pointer-events: auto;
         }
-        
+
 
         .popup-menu .slider-container {
             margin: 20px 0;
@@ -337,7 +317,10 @@
                 flex-direction: column;
             }
 
-            .box1, .box2, .box3, .box4 {
+            .box1,
+            .box2,
+            .box3,
+            .box4 {
                 width: 100vw;
                 height: 25vh;
             }
@@ -474,7 +457,8 @@
         <button class="close-btn" onclick="closePopup()">&times;</button>
         <div class="about-typeface">
             <h1>About Typeface</h1>
-            <p style="font-size:15px;">'Beast is a decorative variable typeface that is inspired by small beasts, namely the spotted lanternfly,
+            <p style="font-size:15px;">'Beast is a decorative variable typeface that is inspired by small beasts, namely
+                the spotted lanternfly,
                 as observed in the year 2025 and the seeds of the maple or samara. This is ideal in its use as a display
                 typeface or as a drop cap to mark the beginning of a chapter.</p>
         </div>
@@ -506,7 +490,7 @@
                 const maxX = window.innerWidth - popupWidth - margin;
                 const maxY = window.innerHeight - popupHeight - margin;
 
-           
+
                 const randomX = Math.max(margin, Math.floor(Math.random() * Math.max(margin, maxX)));
                 const randomY = Math.max(margin, Math.floor(Math.random() * Math.max(margin, maxY)));
 
@@ -532,7 +516,7 @@
         const slider = document.getElementById('fontSlider');
         const demoText = document.getElementById('demoText');
 
-        slider.addEventListener('input', function() {
+        slider.addEventListener('input', function () {
             const growValue = this.value;
             demoText.style.fontVariationSettings = `"GROW" ${growValue}`;
         });
